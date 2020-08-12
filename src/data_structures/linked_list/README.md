@@ -8,7 +8,7 @@
 <img src="https://github.com/doctor-blue/data-structures-and-algorithms-with-Kotlin/blob/master/images/linkedList_1.PNG"/>
 
 ### 2.1 Implement
-- Trong bài này mình sẽ thực hiện implement Linked List sử dụng ngôn ngữ đó chính là Kotlin. 
+- Trong bài này mình sẽ thực hiện implement Linked List sử dụng ngôn ngữ đó chính là Kotlin. Và IDE tất nhiên là IntelliJ IDE rồi :).
 - Bắt đầu chúng ta sẽ tạo 1 file Node.kt và các bạn hãy follow theo phần code dưới đây
 ``` kotlin
 class Node<T>(var value:T,var next:Node<T>? = null) {
@@ -76,7 +76,8 @@ class LinkedList<T> {
  ```
  - (1) Tại đây chúng ta tạo 1 Node mới rồi gán giá trị cho 'head' với value là giá trị chúng ta truyền vào và 'next' chính là 'head' của list. Lúc này 'head' sẽ là  Node mới do chúng ta vừa tạo.
  - (2) Chúng ta cần phải check xem 'tail' nó có null hay không vì trong trường hợp list trống thì tail sẽ không nắm bất kì Node nào cả và list chỉ có 1 Node do chúng ta vừa mới tạo và nó cũng sẽ đóng vai trò vừa là 'head' vừa là 'tail' của list.
- - Ở trên mình return 'this' vì nó sẽ giúp chúng ta không cần viết code dài dòng khi ta muốn thêm giá trị một cách liên tiếp
+ - Ở trên mình return 'this' vì nó sẽ giúp chúng ta không cần viết code dài dòng khi ta muốn thêm giá trị một cách liên tiếp.
+ - Các bạn nhớ tạo thêm 1 file Main.kt để chạy hàm main nha
  
  ```kotlin
  fun main() {
