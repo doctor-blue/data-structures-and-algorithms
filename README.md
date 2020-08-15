@@ -6,3 +6,4 @@ Hi vọng rằng với project này mình có thể giúp các bạn đang học
 
 ## Data Structures
 - [Linked List](https://github.com/doctor-blue/data-structures-and-algorithms-with-Kotlin/tree/master/src/data_structures/linked_list)
+- [Stack](https://github.com/doctor-blue/data-structures-and-algorithms-with-Kotlin/tree/master/src/data_structures/stack)
