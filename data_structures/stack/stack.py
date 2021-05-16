@@ -13,11 +13,11 @@ class Stack:
     def pop(self):
         if self.is_empty:
             return None
-        return self.list.pop()
+        return self.list.pop(0)
 
     def to_string(self):
         str = "----top---\n"
-        for i in self.list[::-1]:
+        for i in self.list:
             str += '{0}\n'.format(i)
         str += '----bottom----'
         return str
