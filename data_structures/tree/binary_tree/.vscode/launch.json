@@ -9,7 +9,7 @@
             "name": "Python: test file",
             "type": "python",
             "request": "launch",
-            "program": "binary_tree_test.py",
+            "program": "${file}",
             "console": "integratedTerminal"
         }
     ]

@@ -69,6 +69,12 @@ class BinaryNode:
         self.traverse_pre_order_with_none(visit)
         return values
 
+    @property
+    def min(self):
+        if self.left_child is None:
+            return self
+        return self.left_child.min
+
 
 def make_binary_tree(arr):
     if type(arr) is list:
@@ -79,6 +85,6 @@ def make_binary_tree(arr):
             return None
 
         root = BinaryNode(root_value)
-        root.left_child = make_binary_tree(arr) 
+        root.left_child = make_binary_tree(arr)
         root.right_child = make_binary_tree(arr)
         return root
