@@ -38,7 +38,6 @@ class AVLTree:
 
     def balanced(self, node):
         balance_factor = node.balance_factor
-        print(balance_factor)
         if balance_factor == 2:
             if node.left_child.balance_factor == -1:
                 return self.left_right_rotate(node)
@@ -58,7 +57,6 @@ class AVLTree:
     def insert_node(self, node, value):
         if node is None:
             return AVLNode(value)
-        print(node.to_string())
 
         if node.value < value:
             node.right_child = self.insert_node(node.right_child, value)
@@ -71,6 +69,34 @@ class AVLTree:
             left_height = balancedNode.left_height
             right_height = balancedNode.right_height
         balancedNode.height = max(left_height, right_height) + 1
+        return balancedNode
+    
+    def delete(self, value):
+        self.root = self.delete_node(self.root, value)
+    
+    def delete_node(self, node, value):
+        if node is None:
+            return None
+        if node.value == value:
+            if node.left_child is None and node.right_child is None:
+                return None
+            elif node.left_child is None:
+                return node.right_child
+            elif node.right_child is None:
+                return node.left_child
+            minValue = node.right_child.min.value
+            if minValue is not None:
+               node.value = minValue
+            node.right_child = self.delete_node(node.right_child, node.value)
+
+        elif node.value > value:
+            node.left_child = self.delete_node(node.left_child, value)
+        else:
+            node.right_child = self.delete_node(node.right_child, value)
+
+        balancedNode = self.balanced(node)
+
+        balancedNode.height = max(balancedNode.left_height, balancedNode.right_height) + 1
         return balancedNode
 
     def to_string(self):

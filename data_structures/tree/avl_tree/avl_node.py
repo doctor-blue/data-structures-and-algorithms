@@ -4,6 +4,12 @@ class AVLNode:
         self.height = 0
         self.left_child = None
         self.right_child = None
+    
+    @property
+    def min(self):
+        if self.left_child is None:
+            return self
+        return self.left_child.min
 
     @property
     def left_height(self):
