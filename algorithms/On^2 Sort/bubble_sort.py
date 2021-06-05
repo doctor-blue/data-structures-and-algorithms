@@ -6,6 +6,7 @@ for end in range(len(list)-1, -1, -1):
             swap = list[current]
             list[current] = list[current+1]
             list[current+1] = swap
-            print(list)
+    print(list)
+        
 
 print(list)
